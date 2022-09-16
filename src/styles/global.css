@@ -23,3 +23,16 @@ html {
 .option_amber {
   @apply bg-gradient-to-b from-amber-450 to-amber-500 border-amber-700 active:to-amber-700 active:from-amber-700;
 }
+
+.react-modal-overlay {
+  background: rgba(9, 10, 12, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(3px);
+}
