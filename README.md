@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="https://code-leap-network.vercel.app/">Acessar site</a>
+  <a href="https://rps-master.vercel.app/">Acessar site</a>
 </p>
 
 ## Sobre o Projeto
