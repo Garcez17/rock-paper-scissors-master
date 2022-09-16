@@ -38,12 +38,12 @@ export function Option({ type, isDisabled = false }: OptionProps) {
       onClick={() => handleSelectOption(type)}
       disabled={isDisabled}
     >
-      <div 
+      <div
         className="bg-white w-[75%] h-[75%] relative flex items-center justify-center rounded-full border-t-8 border-gray-300 active:gray-300"
       >
-        {type === 'PAPER' && <Image src="/icon-paper.svg" width={60} height={60} alt="option" />}
-        {type === 'ROCK' && <Image src="/icon-rock.svg" width={60} height={60} alt="option" />}
-        {type === 'SCISSORS' && <Image src="/icon-scissors.svg" width={60} height={60} alt="option" />}
+        {type === 'PAPER' && <Image src="/icon-paper.svg" width={60} height={60} alt={type} />}
+        {type === 'ROCK' && <Image src="/icon-rock.svg" width={60} height={60} alt={type} />}
+        {type === 'SCISSORS' && <Image src="/icon-scissors.svg" width={60} height={60} alt={type} />}
       </div>
     </motion.button>
   )
