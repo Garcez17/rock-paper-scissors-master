@@ -1,5 +1,5 @@
-import { AnimatePresence, motion, useAnimation } from "framer-motion";
-import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
+
 import { useRPS } from "../hooks/useRPS";
 
 import { ChooseSection } from "./ChooseSection";
@@ -10,7 +10,7 @@ export function Board() {
   
   return (
     <div className="w-full h-full flex items-center justify-center">
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence mode="wait">
         {!selectedOption ? <ChooseSection key="choose_section" /> : <Duel key="duel" />}
       </AnimatePresence>
     </div>

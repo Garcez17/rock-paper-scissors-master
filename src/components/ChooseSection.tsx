@@ -22,8 +22,8 @@ export function ChooseSection() {
           transition={transition} 
           exit={selectedOption === 'PAPER' ?
           {
-            x: -96,
-            y: 96,
+            x: -202,
+            y: 133,
             scale: 1.25,
           } : { opacity: 0, display: 'none' }} 
           className="absolute -top-16 -left-24"
@@ -37,8 +37,8 @@ export function ChooseSection() {
           key="3" 
           transition={transition} 
           exit={selectedOption === 'SCISSORS' ? {
-            x: -352,
-            y: 96,
+            x: -460,
+            y: 133,
             scale: 1.25,
           } : { opacity: 0, display: 'none' }} 
           className="absolute -top-16 -right-24"
@@ -52,8 +52,8 @@ export function ChooseSection() {
           key="4" 
           transition={transition} 
           exit={selectedOption === 'ROCK' ? {
-            x: -232,
-            y: -112,
+            x: -340,
+            y: -75,
             scale: 1.25,
           } : { opacity: 0, display: 'none' }} 
           className="absolute -bottom-20 left-10"
