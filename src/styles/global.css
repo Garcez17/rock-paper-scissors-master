@@ -7,3 +7,19 @@ html {
   height: 100vh;
   background: radial-gradient(ellipse at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
 }
+
+.no_option {
+  @apply bg-gradient-to-b from-blue-800 to-blue-950 brightness-75;
+}
+
+.option_blue {
+  @apply bg-gradient-to-b from-blue-350 to-blue-400 border-blue-700 active:to-blue-700 active:from-blue-700;
+}
+
+.option_red {
+  @apply bg-gradient-to-b from-red-450 to-red-500 border-red-700 active:to-red-700 active:from-red-700;
+}
+
+.option_amber {
+  @apply bg-gradient-to-b from-amber-450 to-amber-500 border-amber-700 active:to-amber-700 active:from-amber-700;
+}

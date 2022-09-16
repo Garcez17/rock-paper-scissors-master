@@ -1,11 +1,15 @@
 import type { NextPage } from 'next'
+
+import { Board } from '../components/Board'
 import { Header } from '../components/Header'
 
 const Home: NextPage = () => {
   return (
     <div className="flex items-center justify-center">
-      <div className="max-w-2xl w-full py-8">
+      <div className="max-w-7xl w-full h-screen flex flex-col items-center">
         <Header />
+
+        <Board />
       </div>
 
       <button 
