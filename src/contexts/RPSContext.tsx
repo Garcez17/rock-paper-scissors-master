@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useCallback, useEffect, useState } from "react";
+import { parseCookies, setCookie } from 'nookies';
 
 export interface RPSContextData {
   handleSelectOption: (option: 'PAPER' | 'ROCK' | 'SCISSORS' | null) => void;
@@ -50,6 +51,14 @@ export function RPSProvider({ children }: RPSProviderProps) {
   const [houseSelected, setHouseSelected] = useState<'PAPER' | 'ROCK' | 'SCISSORS' | null>(null);
   const [result, setResult] = useState<'USER' | 'HOUSE' | 'DRAW' | null>(null);
 
+  useEffect(() => {
+    const cookies = parseCookies();
+
+    const scoreCookie = cookies['rps.score'];
+
+    if (scoreCookie) setScore(Number(scoreCookie));
+  }, []);
+
   const handleSelectOption = useCallback((option: 'PAPER' | 'ROCK' | 'SCISSORS' | null) => {
     setSelectedOption(option);
   }, []);
@@ -63,6 +72,12 @@ export function RPSProvider({ children }: RPSProviderProps) {
 
     if (result === 'WIN') {
       setScore(oldState => oldState += 1);
+
+      setCookie(null, 'rps.score', String(score + 1), {
+        maxAge: 30 * 24 * 60 * 60,
+        path: '/',
+      });
+      
       setResult('USER');
     }
 
@@ -71,7 +86,7 @@ export function RPSProvider({ children }: RPSProviderProps) {
     if (result === 'LOSE') setResult('HOUSE');
     
     setHouseSelected(option);
-  }, [selectedOption]);
+  }, [selectedOption, score]);
   
   const reset = useCallback(() => {
     setHouseSelected(null);
